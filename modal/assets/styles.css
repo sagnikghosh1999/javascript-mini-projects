@@ -1,0 +1,43 @@
+/* reset styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* reset styles */
+
+body {
+    background: linear-gradient(to right, #000428, #004e92);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button#openModal {
+    background-color: #fafafa;
+    border: none;
+    color: #333;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+button#openModal:hover {
+    transform: scale(1.05);
+
+}
+
+button#openModal:focus {
+    outline: none;
+}
