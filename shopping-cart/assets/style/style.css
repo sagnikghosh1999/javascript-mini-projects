@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 900px;
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    transition: transform 0.5s;
+}
+
+svg {
+    width: 30px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+header .title {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+header .icon-cart {
+    position: relative;
+}
+
+header .icon-cart span {
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.25rem;
+    right: -0.75rem;
+}
+
+.listProduct {
+    display: grid;
+    /* Create a responsive grid layout with columns that automatically adjust 
+       to fit the available space, with each column being at least 250px wide 
+       and at most 1fr (fraction of the available space) */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.listProduct .item {
+    background-color: #eeeee6;
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+}
+
+.listProduct .item img {
+    width: 90%;
+    filter: drop-shadow(0 50px 20px #0009);
+}
+
+.listProduct .item h2 {
+    font-weight: 500;
+    font-size: large;
+}
+
+.listProduct .item .price {
+    letter-spacing: 4px;
+    font-size: medium;
+}
+
+.listProduct .item button {
+    background-color: #353432;
+    color: #eee;
+    padding: 0.375rem 0.75rem;
+    border-radius: 1.25rem;
+    margin-top: 10px;
+    border: none;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.cartTab {
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    inset: 0 -400px 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: all 0.5s;
+}
+
+body.showCart .cartTab {
+    inset: 0 0 0 auto;
+}
+
+
+
+.cartTab .cartTitle {
+    font-weight: 300;
+    padding: 20px;
+    margin: 0;
+}
+
+.listCart {
+    overflow-y: auto;
+}
+
+.listCart::-webkit-scrollbar {
+    width: 0;
+}
+
+.listCart .item {
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 8px;
+    text-align: center;
+    align-items: center;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.listCart .item:nth-child(even) {
+    background-color: #eee1;
+}
+
+.listCart .item img {
+    width: 100%;
+}
+
+.listCart .item .name {
+    text-transform: uppercase;
+}
+
+.listCart .quantity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    color: #555;
+    cursor: pointer;
+}
+
+.listCart .quantity span:nth-child(2) {
+    background-color: transparent;
+    color: #eee;
+    cursor: auto;
+}
+
+.cartTab .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab .btn button {
+    background-color: #E8BC0E;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cartTab .btn button:nth-child(2) {
+    background-color: #eee;
+}
+
+@media (min-width: 1024px) {
+    body.showCart .container {
+        transform: translateX(-50px);
+    }
+}
+
+@media (min-width: 1280px) {
+    body.showCart .container {
+        transform: translateX(-150px);
+    }
+}
+
+@media (min-width: 1440px) {
+    body.showCart .container {
+        transform: translateX(-250px);
+    }
+}
